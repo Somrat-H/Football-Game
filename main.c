@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 int main()
 {
     int m = 11, n = 22;
@@ -18,7 +19,7 @@ int main()
                 a[i][j] = 'G';
             }
             else
-                a[i][j] = ' ';
+                a[i][j] = 'x';
         }
     }
     for (int i = 0; i < 11; i++)
@@ -30,29 +31,35 @@ int main()
         printf("\n");
     }
 
-    // printf("Enter 'D' to right \n");
-    // char c ;
-    // scanf("%c", &c);
+    
 
-    // if(c == 'd'){
-    // for (int i = 0; i < 11; i++)
-    // {
-    //     for (int j = 0; j < 22; j++)
-    //     {   
-    //       if(a[i][j] == 'P'){
-    //         a[i][j] = ' ';
-    //         j++;
-    //         a[i][j] = 'P';
-    //       }
-           
-    //     }
-    // }
-    // }
-    printf("Enter 'A' to left \n");
-    char c;
+    while (1)
+    {
+        
+        /* code */
+    printf("Enter 'D' to right \nEnter 'A' to left \nEnter 'w' to up \nEnter 's' to down \n");
+    char c ;
     scanf("%c", &c);
+    
+    system("clear");
 
-    if(c == 'a'){
+    if(c == 'd'){
+    for (int i = 0; i < 11; i++)
+    {
+        for (int j = 0; j < 22; j++)
+        {   
+          if(a[i][j] == 'P'){
+            a[i][j] = ' ';
+            j++;
+            a[i][j] = 'P';
+          }
+           
+        }
+    }
+    }
+    
+
+    else if(c == 'a'){
     for (int i = 0; i < 11; i++)
     {
         for (int j = 0; j < 22; j++)
@@ -67,6 +74,44 @@ int main()
     }
 
     }
+ 
+   
+
+    else if(c == 'w'){
+    for (int i = 0; i < 11; i++)
+    {
+        for (int j = 0; j < 22; j++)
+        {   
+          if(a[i][j] == 'P'){
+            a[i][j] = ' ';
+            i--;
+            a[i][j] = 'P';
+          }
+           
+        }
+    }
+
+    }
+    
+
+    else if(c == 's'){
+    for (int i = 0; i < 11; i++)
+    {
+        for (int j = 0; j < 22; j++)
+        {   
+          if(a[i][j] == 'P'){
+            a[i][j] = ' ';
+            i++;
+            a[i][j] = 'P';
+          }
+           
+        }
+    }
+    }
+    else {
+    printf("Incorrect key enterd\n");
+    }
+
     for (int i = 0; i < 11; i++)
     {
         for (int j = 0; j < 22; j++)
@@ -74,6 +119,7 @@ int main()
             printf("%c", a[i][j]);
         }
         printf("\n");
+    }
     }
 
     return 0;
