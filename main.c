@@ -2,6 +2,24 @@
 #include <stdlib.h>
 #include "input.h"
 
+// Window dimension start
+/*
+#include <unistd.h>
+#include <sys/ioctl.h>
+
+struct winsize ws;
+
+unsigned short windowCol(){
+  ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
+  return ws.ws_col;  
+}
+
+unsigned short windowRow(){
+  ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
+  return ws.ws_row;  
+}
+*/
+// Window dimesion end
 int main()
 {
   int m = 11, n = 22;
